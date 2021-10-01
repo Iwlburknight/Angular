@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+
+.mat-form-field-underline {
+  display: none;
+}
+
+.btnClass{
+  background-color: #4A87A7;
+  color:white;
+}
+
+#myFavTable th{
+  vertical-align: middle;
+  text-align: center;
+}
+
+
+/* #ihateTable th{
+  border-top: 0;
+} */

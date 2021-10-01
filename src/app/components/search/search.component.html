@@ -1,0 +1,35 @@
+<div class="search">
+    <input type="text" [(ngModel)]="myData" />
+    <button (click)="doSearch()"> search</button>
+    <hr>
+
+    <ul>
+        <li *ngFor="let item of searchList;let key=index;">
+            {{searchList[key]}}-----<button (click)="deleteData(key)">X</button>
+        </li>
+    </ul>
+</div>
+
+<br>
+<br>
+<div class="toDoList">
+    <h2>toDoList</h2>
+    <input type="text" [(ngModel)]="toDoString" (keyup)="doAdd($event)" />
+
+
+    <h3>待办事项</h3>
+    <ul>
+        <li  *ngFor="let item of toDoList; let toDoKey=index;" [hidden]="item.status==1">
+            <input type="checkbox" [(ngModel)]="item.status" (change)="changeBox()" /> {{item.title}}----<button (click)="deleteThing(toDoKey)" >X</button>
+        </li>
+    </ul>
+
+    <h3>已完成事项</h3>
+    <ul>
+        <li  *ngFor="let item of toDoList; let toDoKey=index;" [hidden]="item.status==0">
+            <input type="checkbox" [(ngModel)]="item.status" (change)="changeBox()" /> {{item.title}}----<button (click)="deleteThing(toDoKey)" >X</button>
+        </li>
+    </ul>
+
+
+</div>

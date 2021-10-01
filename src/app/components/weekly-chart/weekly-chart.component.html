@@ -1,0 +1,55 @@
+<!-- modal 框 -->
+<!-- 过了过了，赶紧肝下一个 -->
+<ng-template #content let-modal>
+
+  <div class="modal-header" style="background-color: #4A87A7;font-weight:600;">
+    <h4 class="modal-title" id="modal-basic-title"></h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body" style="background-color: #9CD1F1;">
+
+    <div class="row">
+      <div class="col-6" style="text-align: center; margin:auto;">
+
+          <!-- 城市 -->
+          <div class="row" style="width: 120%; margin-left: 1em; margin-bottom: 3em; font-size: 160%; font-weight: bold;" id="modalCity">City</div>
+          <!-- 温度 -->
+          <div class="row" style="width: 120%; margin-left: 1.5em; margin-top: -3.7em;">
+              <h5 #cardTemp class="card-title" id="modalTemp" style="font-weight: bolder; font-size:200%">cardTemp</h5>
+              <img src="https://cdn3.iconfinder.com/data/icons/virtual-notebook/16/button_shape_oval-512.png"  class="rounded float-left" height=5% width=5% />
+              <h5 class="card-title" style="font-weight: bolder; font-size:197%">F</h5>
+          </div>
+          <!-- summary -->
+          <div class="row" style="width: 100%; margin-left: 1.2em; margin-top: 0em; font-size: 117%;" id="modalSummary">summary</div>
+
+      </div>
+      <div class="col-6" style="width:75%;">
+        <img id="modalImg" src="#" class="img-fluid max-width:10% height:auto image-responsive"/>
+      </div>
+    </div>
+
+    <div class="row" style="margin:auto; width:85%; height:0.5%;background-color: #8DBEDB;"></div>
+
+    <div class="row" style="text-align: left;">
+        <div class="col-6"></div>
+        <div class="col-6" style="font-weight:600;">
+          <div class="row" id="precipitation"></div>
+          <div class="row" id="chanceOfRain"></div>
+          <div class="row" id="windSpeed"></div>
+          <div class="row" id="humidity"></div>
+          <div class="row" id="visibility"></div>
+        </div>
+    </div>
+
+  </div>
+</ng-template>
+
+<!-- 放weekly的 rangeBar bar -->
+<div id="chartContainer" style="margin-left:auto;margin-right:auto;"></div>
+
+<div style="display: none;">
+  <button #myBtn class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button>
+</div>
+
